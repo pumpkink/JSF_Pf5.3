@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        Hello from Facelets<br />
+        <h:link outcome="welcomePrimefaces" value="This is the link to Primefaces Welcomepage"/><br/>
+        <h:link outcome="sta_gmap" value="Static Google Map"/><br/>
+        <h:link outcome="gmap" value="Google Map Marker"/><br/>
+        <h:link outcome="gmap_Event" value="Google Map Event"/><br/>
+        <h:link outcome="gmap_InfoWindow" value="Google InfoWindow"/><br/>
+        <h:link outcome="gmap_CarInfoWindow" value="Google Car Info Window"/><br/>
+        <h:link outcome="gmap_Controls" value="Google UI Controls"/><br/>
+        <h:link outcome="gmap_DragEvent" value="Google Marker Dragevent"/><br/>
+        <h:link outcome="amap" value="1.This is the link to Static Gaode Map"/><br/>
+        <h:link outcome="amap_Marker" value="2.This is the link to Gaode Map Marker"/><br/>
+        <h:link outcome="amap_Polylines" value="3.This is the link to Gaode Map Polylines"/><br/>
+        <h:link outcome="amap_Polygons" value="4.This is the link to Gaode Map Polygons"/><br/>
+        <h:link outcome="amap_Circles" value="5.This is the link to Gaode Map Circles"/><br/>
+        <h:link outcome="amap_Controls" value="6.This is the link to Gaode Map UI Controls"/><br/>
+        <h:link outcome="amap_Event" value="7.This is the link to Gaode Map StateEvent"/><br/>
+        <h:link outcome="amap_DragEvent" value="8.This is the link to Gaode Map DragEvent"/><br/>
+        <h:link outcome="amap_InfoWindow" value="9.This is the link to Gaode Map InfoWindow"/><br/>
+        <h:form>            
+        <h:outputLink value="javascript:void(0)" onclick="PF('dlg').show();" title="login">
+                 <p:graphicImage name="/demo/images/login.png" />
+        </h:outputLink>
+ 
+        <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+ 
+        <p:dialog header="My Gourmet" widgetVar="dlg" resizable="false">
+        <h:panelGrid columns="2" cellpadding="5">
+            <h:outputLabel for="username" value="Username:" />
+            <p:inputText id="username" value="#{userLoginView.username}" required="true" label="username" />
+ 
+            <h:outputLabel for="password" value="Password:" />
+            <p:password id="password" value="#{userLoginView.password}" required="true" label="password" />
+ 
+            <f:facet name="footer">
+                <p:commandButton value="Login" update="growl" actionListener="#{userLoginView.login}" action="#{userLoginView.loginSuccessful}"
+                                 oncomplete="handleLoginRequest(xhr, status, args)" />
+            </f:facet>  
+        </h:panelGrid>
+    </p:dialog>
+</h:form>
+</h:body>
+<script type="text/javascript">
+    function handleLoginRequest(xhr, status, args) {
+        if(args.validationFailed || !args.loggedIn) {
+            PF('dlg').jq.effect("shake", {times:5}, 100);
+        }
+        else {
+            PF('dlg').hide();
+            $('#loginLink').fadeOut();
+        }
+    }
+</script>
+
+</html>
+

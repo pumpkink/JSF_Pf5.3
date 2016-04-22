@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<component>
+   <tag>amapInfoWindow</tag>
+   <tagClass>org.primefaces.component.amap.AMapInfoWindowTag</tagClass>
+   <componentClass>org.primefaces.component.amap.AMapInfoWindow</componentClass>
+   <componentType>org.primefaces.component.AMapInfoWindow</componentType>
+   <componentFamily>org.primefaces.component</componentFamily>
+   <parent>javax.faces.component.UIComponentBase</parent>
+   <description>AMapInfoWindow is used with AMap component to open a window on map when an overlay is selected.</description>
+   <attributes>
+      <attribute>
+         <name>id</name>
+         <required>false</required>
+         <type>java.lang.String</type>
+         <ignoreInComponent>true</ignoreInComponent>
+         <literal>true</literal>
+         <description>Unique identifier of the component in a namingContainer.</description>
+      </attribute>
+      <attribute>
+         <name>rendered</name>
+         <required>false</required>
+         <type>java.lang.Boolean</type>
+         <ignoreInComponent>true</ignoreInComponent>
+         <description>Boolean value to specify the rendering of the component, when set to false component will not be rendered.</description>
+      </attribute>
+      <attribute>
+         <name>binding</name>
+         <required>false</required>
+         <type>javax.faces.component.UIComponent</type>
+         <ignoreInComponent>true</ignoreInComponent>
+         <description>An el expression referring to a server side UIComponent instance in a backing bean.</description>
+      </attribute>
+      <attribute>
+         <name>Custom</name>
+         <required>true</required>
+         <type>java.lang.Boolean</type>
+         <defaultValue>true</defaultValue>
+         <description>Custom defined InfoWindows.</description>
+      </attribute>
+      <attribute>
+         <name>content</name>
+         <required>false</required>
+         <type>java.lang.String</type>
+         <description>The Content for custom defined InfoWindows.</description>
+      </attribute>
+      <attribute>
+         <name>offset</name>
+         <required>false</required>
+         <type>java.lang.String</type>
+         <description>The offset of Infowindow relatvie to the point.</description>
+      </attribute>
+      <attribute>
+         <name>closeWhenClickMap</name>
+         <required>false</required>
+         <type>java.lang.Boolean</type>
+         <defaultValue>true</defaultValue>
+         <description>Close InfoWindows when click the map.</description>
+      </attribute>
+      <attribute>
+         <name>extData</name>
+         <required>false</required>
+         <type>java.lang.String</type>
+         <defaultValue>j_idt5:infoWindow</defaultValue>
+         <description>Id of InfoWindow</description>
+      </attribute>
+   </attributes>
+</component>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE component SYSTEM "../misc/component.dtd" [
+<!ENTITY standard_uicomponent_attributes		SYSTEM "../entities/standard_uicomponent_attributes.xml">
+]>
+<component>
+	<tag>amapInfoWindow</tag>
+	<tagClass>org.primefaces.component.amap.AMapInfoWindowTag</tagClass>
+	<componentClass>org.primefaces.component.amap.AMapInfoWindow</componentClass>
+	<componentType>org.primefaces.component.AMapInfoWindow</componentType>
+	<componentFamily>org.primefaces.component</componentFamily>
+	<parent>javax.faces.component.UIComponentBase</parent>
+    <description>AMapInfoWindow is used with AMap component to open a window on map when an overlay is selected.</description>
+	<attributes>
+		&standard_uicomponent_attributes;
+	        <attribute>
+			<name>Custom</name>
+			<required>true</required>
+			<type>java.lang.Boolean</type>
+			<defaultValue>true</defaultValue>
+                        <description>Custom defined InfoWindows.</description>
+                </attribute>
+                <attribute>
+			<name>content</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+			<description>The Content for custom defined InfoWindows.</description>
+                </attribute>
+                <attribute>
+			<name>offset</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+                        <description>The offset of Infowindow relatvie to the point.</description>
+                </attribute>
+                <attribute>
+			<name>closeWhenClickMap</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+			<defaultValue>true</defaultValue>
+                        <description>Close InfoWindows when click the map.</description>
+                </attribute>
+                <attribute>
+			<name>extData</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+                        <defaultValue>j_idt5:infoWindow</defaultValue>
+                        <description>Id of InfoWindow</description>
+                </attribute>
+               
+        </attributes>
+</component>
